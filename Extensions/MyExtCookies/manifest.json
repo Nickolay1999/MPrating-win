@@ -1,0 +1,26 @@
+{
+   "manifest_version": 3,
+   "name": "Cookie Saver",
+   "version": "1.0",
+   "permissions": [
+   "cookies",
+   "activeTab",
+   "tabs"
+   ],
+   "host_permissions": [ "*://*/*" ],
+   "background": {
+   "service_worker": "background.js"
+   },
+   "action": {
+   "default_popup": "popup.html",
+   "default_icon": {
+   "16": "logo.png",
+   "48": "logo.png",
+   "128": "logo.png"
+   }
+   },
+   "content_scripts": [{
+   "matches": ["*://*/*"],
+   "js": ["content.js","inject.js"]
+   }]
+   }
